@@ -1,0 +1,203 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@500;700&display=swap');
+
+:root {
+    --vdgb: hsl(217, 19%, 35%);
+    --ddb: hsl(214, 17%, 51%);
+    --gb: hsl(212, 23%, 69%);
+    --lgb: hsl(210, 46%, 95%);
+}
+
+*, :before, :after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-size: 1.3rem;
+    font-family: 'Manrope', sans-serif;
+    background-color: var(--lgb);
+}
+
+
+/*==================================
+CONTAINER
+==================================*/
+.container {
+    max-width: 1440px;
+    margin: 0 auto;
+    width: 100%;
+    height: 800px;
+    display: flex;
+    align-items: center;
+}
+
+/*==================================
+CARD
+==================================*/
+.card {
+    max-width: 735px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    height: 280px;
+    border-radius: 1rem;
+    /*overflow: hidden;*/
+}
+
+/*========== IMG */
+.card-img {
+    width: 40%;
+    height: 100%;
+}
+
+.card-img img {
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+    border-radius: 1rem 0 0 1rem;
+}
+
+
+/*========== TEXT BLOCK */
+/*=== TEXT */
+h1 {
+    font-size: 2rem;
+    color: var(--vdgb);
+}
+strong {
+    color: var(--vdgb);
+}
+.card-text p {
+    color: var(--ddb);
+    line-height: 1.5;
+    margin: 15px 0;
+}
+.card-text-block {
+    width: 60%;
+    height: 100%;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+
+/*=== PROFIL */
+.card-profil {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.card-profil-main {
+    display: flex;
+    align-items: center;
+}
+.card-profil-main img {
+    width: 40px;
+    border-radius: 50%;
+}
+.card-profil-main p {
+    color: var(--gb);
+}
+.profil-info {
+    margin-left: 10px;
+}
+.card-profil-share {
+    position: relative;
+    border-radius: 50%;
+    background-color: var(--lgb);
+    width: 32px;
+    height: 32px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.card-profil-share .img-active {
+    display: none;
+}
+.card-profil-share:hover {
+    color: #fff;
+    background-color: var(--ddb);
+}
+.card-profil-share:hover .img-active {
+    display: block;
+}
+.card-profil-share:hover .img-base {
+    display: none;
+}
+
+/*========== HOVER CARD */
+.hover-card {
+    display: none;
+    position: absolute;
+    top: -75px;
+    z-index: 100;
+    background-color: var(--vdgb);
+    justify-content: space-between;
+    padding: 15px 30px;
+    width: 250px;
+    border-radius: 1rem;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+
+.hover-card p {
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--gb);
+}
+
+.arrow {
+    display: none;
+    position: absolute;
+    top: -35px;
+    width: 20px;
+    height: 20px;
+    background-color: var(--vdgb);
+    z-index: 100;
+    transform: rotate(45deg);
+}
+
+/*
+RESPONSIVE
+*/
+
+@media screen and (max-width: 470px) {
+    .card {
+        flex-direction: column;
+        height: 600px;
+        width: 85%;
+    }
+    .card-img {
+        width: 100%;
+        height: 100%;
+        border-radius: 1rem 1rem 0 0;
+        overflow: hidden;
+    }
+    .card-img img {
+        border-radius: 0;
+        /*object-fit: contain;*/
+    }
+    .card-text-block {
+        width: 100%;
+        padding: 40px 30px 20px;
+        /*position: relative;*/
+    }
+    .card-profil-share:hover {
+        z-index: 999;
+    }
+    .hover-card {
+        display: flex;
+        top: 0;
+        width: 100%;
+        justify-content: space-between;
+        border-radius: 0 0 1rem 1rem;
+    }
+}
