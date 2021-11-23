@@ -85,6 +85,7 @@ strong {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    position: relative;
 }
 
 
@@ -109,7 +110,7 @@ strong {
     margin-left: 10px;
 }
 .card-profil-share {
-    position: relative;
+    /*position: relative;*/
     border-radius: 50%;
     background-color: var(--lgb);
     width: 32px;
@@ -138,10 +139,12 @@ strong {
 .hover-card {
     display: none;
     position: absolute;
-    top: -75px;
+    bottom: 32%;
+    right: -80px;
     z-index: 100;
     background-color: var(--vdgb);
     justify-content: space-between;
+    align-items: center;
     padding: 15px 30px;
     width: 250px;
     border-radius: 1rem;
@@ -157,12 +160,16 @@ strong {
 .arrow {
     display: none;
     position: absolute;
-    top: -35px;
+    top: 64%;
+    right: 45px;
     width: 20px;
     height: 20px;
     background-color: var(--vdgb);
     z-index: 100;
     transform: rotate(45deg);
+}
+.active {
+    display: flex;
 }
 
 /*
@@ -190,14 +197,23 @@ RESPONSIVE
         padding: 40px 30px 20px;
         /*position: relative;*/
     }
-    .card-profil-share:hover {
+    .card-profil-share {
         z-index: 999;
     }
-    .hover-card {
+    .hover-card.active {
         display: flex;
-        top: 0;
+        justify-content: flex-start;
+        height: 80px;
+        font-size: 1.6rem;
+        bottom: 0;
+        left: 0;
         width: 100%;
-        justify-content: space-between;
         border-radius: 0 0 1rem 1rem;
+    }
+    .hover-card > * {
+        margin-right: 5%;
+    }
+    .hover-card img {
+        width: 25px;
     }
 }
